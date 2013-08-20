@@ -15,7 +15,8 @@
 			function calcular() {
 				var op1 = get("op1");
 				var op2 = get("op2");
-				document.getElementById("resultado").innerHTML = "<font color=red>" + (op1 + op2) + "</font>";
+				var res = op1 + op2;
+				document.getElementById("resultado").innerHTML = "<font color=red>" + res + "</font>";
 			}
 			
 			function actualizarEstado() {
