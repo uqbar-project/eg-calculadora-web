@@ -11,11 +11,12 @@
 
 <body>
 <center>
-<h2>Dos ejemplos de calculadora client side:</h2>
+<h2>Tres ejemplos de calculadora client side:</h2>
 </center>
 <ul>
 	<li><a href="calculadora.jsp">Calculadora que suma dos n&uacute;meros</a></li>
 	<li><a href="calculadoraDyn.jsp">Calculadora avanzada con operaciones m&uacute;ltiples</a></li>
+	<li><a href="calculadoraJQ.jsp">Calculadora con chiches visuales</a></li>
 </ul>
 </body>
 </html>
