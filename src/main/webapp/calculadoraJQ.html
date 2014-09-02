@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="styles.css" />
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
 <!-- jQWidgets framework -->
 <link rel="stylesheet" href="jqwidgets/styles/jqx.energyblue.css"
@@ -13,7 +11,7 @@
 	type="text/css" />
 <link rel="stylesheet" href="jqwidgets/styles/jqx.darkblue.css"
 	type="text/css" />
-<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
 <script type="text/javascript" src="scripts/gettheme.js"></script>
 <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
@@ -21,27 +19,6 @@
 <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>
 <script type="text/javascript" src="jqwidgets/jqxchart.js"></script>
 <script type="text/javascript" src="jqwidgets/jqxgauge.js"></script>
-
-<style type="text/css">
-#gaugeValue {
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa),
-		color-stop(100%, #f3f3f3));
-	background-image: -webkit-linear-gradient(#fafafa, #f3f3f3);
-	background-image: -moz-linear-gradient(#fafafa, #f3f3f3);
-	background-image: -o-linear-gradient(#fafafa, #f3f3f3);
-	background-image: -ms-linear-gradient(#fafafa, #f3f3f3);
-	background-image: linear-gradient(#fafafa, #f3f3f3);
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-	padding: 10px;
-}
-</style>
 
 <title>Calculadora con chiches</title>
 </head>
@@ -53,7 +30,7 @@
 		<div style='margin-top: 3px;' id='num2'></div>
 		<br> <input type="button" value="Sumar" id='sumar' /> <br>
 		<br>
-		<div style="margin-left: 60px; float: left;" id="resultado"></div>
+		<div style="margin-left: 60px; float: left;" id="resultado" class="resultado"></div>
 		<br>
 	</div>
 </body>
@@ -115,7 +92,7 @@
 					stroke : '#aaaaaa'
 				}
 			},
-			max : 60,
+			max : 100,
 			pointer : {
 				size : '5%'
 			},

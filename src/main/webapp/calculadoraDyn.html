@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+		<title>Calculadora con evaluación dinámica - ejemplo javascript</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+
+		<script language="javascript">
+			function value(param) {
+				return $(param).value;
+			}
+			
+			function $(param) {
+				return document.getElementById(param);
+			}
+
+			function calcula(operacion) {
+				var operando1 = value("op1");
+				var operando2 = value("op2");
+				var result = eval(operando1 + operacion + operando2); 
+				$("resultado").innerHTML = result;
+				$("resultado").style.display = "block";
+			}
+			
+			function actualizarEstado() {
+				// TODO: Evitar que con strings vacíos me habilite los botones
+				$("resultado").style.display = "none";
+				var op1 = isNaN(value("op1"));
+				var op2 = isNaN(value("op2"));
+				var inhabilitado = (op1 || op2);
+				$("suma").disabled = inhabilitado;
+				$("resta").disabled = inhabilitado;
+				$("multiplicacion").disabled = inhabilitado;
+				$("division").disabled = inhabilitado || $("op2") == 0;
+			}
+		</script>
+	</head>
+
+	<body>
+		<center>
+		<h2>Calculadora</h2>
+		<form method="post" action="search">
+			Ingrese un valor: <input id="op1" type="text" onkeyup="javascript:actualizarEstado();"> <br>
+			Ingrese otro valor: <input id="op2" onkeyup="javascript:actualizarEstado();" type="text"> <br>
+			<input type="button" id="suma" class="button" value=" + " onclick="calcula('+')" disabled="true"/> 
+			<input type="button" id="resta" class="button" value=" - " onclick="calcula('-')" disabled="true"/> 
+			<input type="button" id="multiplicacion" class="button" value=" x " onclick="calcula('*')" disabled="true"/> 
+			<input type="button" id="division" class="button" value=" : " onclick="calcula('/')" disabled="true"/>
+			<div class="resultado"> 
+				<span id="resultado" class="resultado" style="display:none;"/>
+			</div>
+		</form>
+		</center>
+	</body>
+</html>

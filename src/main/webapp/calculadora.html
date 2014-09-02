@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html>
+	<head>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+		<title>Calculadora - ejemplo Javascript</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+
+		<script language="javascript">
+			function $(id) {
+				return document.getElementById(id);
+			}
+			
+			function asFloat(param) {
+				return parseFloat($(param).value);
+			}
+
+			function calcular() {
+				var op1 = asFloat("op1");
+				var op2 = asFloat("op2");
+				var res = op1 + op2;
+				$("resultado").innerHTML = res;
+				$("resultado").style.display = 'block';
+			}
+			
+			function actualizarEstado() {
+				$("resultado").style.display = "none";
+				var op1 = isNaN(asFloat("op1"));
+				var op2 = isNaN(asFloat("op2"));
+				$("sumar").disabled = (op1 || op2);
+			}
+		</script>
+	</head>
+
+	<body>
+		<center>
+		<h2>Calculadora</h2>
+		<form>
+			Ingrese un valor: <input id="op1" type="text" onkeyup="actualizarEstado()"> <br>
+			Ingrese otro valor: <input id="op2" onkeyup="actualizarEstado()" type="text"> <br>
+			<input type="button" id="sumar" class="button" value="Sumar" disabled="true" onClick="calcular();" >
+			<div class="resultado">
+				<span id="resultado" class="resultado" style="display:none;"></span>
+			</div>
+		</form>
+		</center>
+	</body>
+</html>
