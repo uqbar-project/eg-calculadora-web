@@ -1,4 +1,7 @@
 # Calculadora Web - Client side
+
+![calculator](https://cloud.githubusercontent.com/assets/4549002/17557990/945d4894-5eef-11e6-8594-39d4724cd715.png)
+
 Tenés un link con dos páginas: 
 
 * la primera es una calculadora básica que suma dos números 
